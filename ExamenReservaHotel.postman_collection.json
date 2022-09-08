@@ -1,0 +1,46 @@
+{
+	"id": "777142b5-c174-27dc-5bfd-5c712c8c085e",
+	"name": "ExamenReservaHotel",
+	"description": "",
+	"order": [
+		"17da3c16-5bee-ef45-1aa3-0ea022c3b199"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1662609199443,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "17da3c16-5bee-ef45-1aa3-0ea022c3b199",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8000/hotel/api/guardar_reserva",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "777142b5-c174-27dc-5bfd-5c712c8c085e",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8000/hotel/api/guardar_reserva",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1662609207019,
+			"version": 2,
+			"responses": [],
+			"tests": "{\n\n    \"reserva\": {\n        \"estado_reserva\" : \"PA\",\n        \"metodo_pago\" : \"EFECTIVO\",\n        \"cliente\":\"CESAR ROBERTO GARCIA\",\n        \"documento_identidad_cliente\" : \"76435132\",\n        \"monto_pagar\" : 150\n    },\n    \n    \"fecha_reserva\": [\n        {\n            \"habitacion\": 1,\n            \"fecha\" : \"2022-09-21\"\n        }\n    ]\n}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"fechas\":[ \n    \t{\n\t    \t\"fecha\" : \"2022-09-26\",\n\t    \t\"habitacion\": 1\n\t    },\n\t    {\n\t    \t\"fecha\" : \"2022-09-27\",\n\t    \t\"habitacion\": 1\n\t    }\n    ],\n    \"reserva\": {\n        \"estado_reserva\" : \"PE\",\n        \"metodo_pago\" : \"EFECTIVO\",\n        \"cliente\":\"CESAR ROBERTO GARCIA\",\n        \"documento_identidad_cliente\" : \"76435132\",\n        \"monto_pagar\" : 150\n    }\n}"
+		}
+	]
+}
