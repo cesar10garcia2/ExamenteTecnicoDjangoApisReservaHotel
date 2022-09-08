@@ -53,5 +53,6 @@ class FechaReserva(models.Model):
     )
     reserva = models.ForeignKey(
         Reserva, on_delete=models.PROTECT,
+        related_name='reservas',
         verbose_name="Reserva"
     )

@@ -25,11 +25,11 @@ class HabitacionSerializer(serializers.ModelSerializer):
         fields = ['id', 'nombre', 'fecha_reservas']
 
 class ReservaSerializer(serializers.ModelSerializer):
-
+    reservas = FechaReservaSerializer(many=True)
     class Meta:
         model = Reserva
         fields = ['id', 'estado_reserva', 'metodo_pago', 'cliente',
-                  'documento_identidad_cliente', 'monto_pagar']
+                  'documento_identidad_cliente', 'monto_pagar', 'reservas']
 
 
 class FechaReservaGuardarSerializer(serializers.ModelSerializer):
@@ -37,8 +37,14 @@ class FechaReservaGuardarSerializer(serializers.ModelSerializer):
         model = FechaReserva
         fields = ['id', 'fecha', 'habitacion']
 
+class ReservaGuardarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reserva
+        fields = ['id', 'estado_reserva', 'metodo_pago', 'cliente',
+                  'documento_identidad_cliente', 'monto_pagar']
+
 class GuardarReservaSerializer(serializers.ModelSerializer):
-    reserva = ReservaSerializer()
+    reserva = ReservaGuardarSerializer()
     fechas = FechaReservaGuardarSerializer(many=True)
     habitacion = Habitacion()
     class Meta:
